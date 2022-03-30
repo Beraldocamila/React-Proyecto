@@ -2,6 +2,13 @@
   background-color: #efd3bbbe;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+.logo{
+margin: 10px;
+
 }
 
 .categories li{
@@ -14,8 +21,8 @@
 
 .categories li a{
   text-decoration: none;
-  color: #553a2b;
-
+  color: #452e21;
+  font-family: 'Belleza', sans-serif;
 }
 
 .App {
