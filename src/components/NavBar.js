@@ -1,4 +1,7 @@
-import logo from './logoDesk.png';
+import logo from '../images/logoDesk.png';
+import SearchIcon  from './SearchIcon';
+import CartWidget from './CartWidget';
+
 
 const NavBar = () => {
     return (
@@ -13,7 +16,11 @@ const NavBar = () => {
                     <li><a href="a">Sillones</a></li>
                 </ul>
             </div>
-            <div></div>
+            <div className='iconsRight'>
+                <SearchIcon />
+                <CartWidget />
+                
+            </div>
             
         </div>
         </>
