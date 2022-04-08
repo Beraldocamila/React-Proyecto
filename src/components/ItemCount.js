@@ -16,7 +16,7 @@ const ItemCount = ({stock, initial}) => {
             setAmount(amount-1);
         }
     }
-
+    
     const onAdd = () =>{
         alert("Usted a seleccionado: " + amount + " items");
     }
