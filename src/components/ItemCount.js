@@ -23,10 +23,10 @@ const ItemCount = ({stock, initial}) => {
     
     return (
         <div className="addToCart">
-            <div className="desk_title">
+            {/* <div className="desk_title">
                 <h3 className="title">Escritorio</h3>
                 <img src={escritorio} alt="escritorio"/>
-            </div>
+            </div> */}
             <div className="addToCart_button">
                 <button onClick={decrement}>-</button>
                 <p>Cantidad: {amount}</p>

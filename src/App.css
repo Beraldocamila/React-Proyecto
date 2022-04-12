@@ -64,6 +64,23 @@ margin-bottom: 100px;
   height: 350px;
   width: 350px;
 }
+.detail img{
+  height: 350px;
+  width: 350px;
+}
+
+.detail{
+  display: flex;
+  margin: 100px;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.detail div{
+  width: 60%;
+}
 .title{
   margin: 20px;
   font-family: 'Belleza', sans-serif;
@@ -76,18 +93,18 @@ margin-bottom: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 10%;
+
 }
 
 .addToCart_button{
   display: flex;
   flex-direction: row;
-
   justify-content: space-between;
   align-items: center;
 
-  width: 20%;
+
 }
+
 .App {
   text-align: center;
 }

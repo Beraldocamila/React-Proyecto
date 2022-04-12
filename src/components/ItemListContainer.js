@@ -18,9 +18,10 @@ const ItemListContainer = ({greeting}) => {
 
     return(
         <>
-        <p className="itemListContainer"> {greeting} </p>
+        <p className="itemListContainer"> {greeting} </p>}
         <ItemList productos={desk}/>
         <ItemCount   stock={6} initial= {1}/>
+
         </>
     )
 
