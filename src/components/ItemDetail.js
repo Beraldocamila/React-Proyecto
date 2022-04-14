@@ -5,7 +5,7 @@ const ItemDetail = ({item}) => {
 return(
     <>
     {
-        item.picture
+        item && item.picture
         ?
 
     <div className="detail">
