@@ -1,7 +1,15 @@
+import { useState } from 'react';
 import ItemCount from './ItemCount';
+import {Link} from 'react-router-dom'
 
 const ItemDetail = ({item}) => {
 
+    const [itemCount, setItemCount] = useState (0);
+
+    const onAdd = (amount) =>{
+        alert("Usted a seleccionado: " + amount + " items");
+        setItemCount(amount);
+    }
 return(
     <>
     {
@@ -15,7 +23,13 @@ return(
             <p> {item.description}</p>
             <p> Precio: {item.price}</p>
             <p> Stock: {item.stock} unidades.</p>
-            <ItemCount  stock={item.stock} initial= {1}/>
+            {
+
+                itemCount === 0
+                ? <ItemCount  stock={item.stock} initial= {itemCount} onAdd={onAdd}/>
+                : <Link to='/cart'> <button>CheckOut</button></Link>
+            }
+
         </div>
     </div>
     : 
