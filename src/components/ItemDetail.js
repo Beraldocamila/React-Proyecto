@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ItemCount from './ItemCount';
 import {Link} from 'react-router-dom'
+import { CartContext } from './CartContext';
 
 const ItemDetail = ({item}) => {
 
     const [itemCount, setItemCount] = useState (0);
+    const cart = useContext(CartContext);
 
     const onAdd = (amount) =>{
         alert("Usted a seleccionado: " + amount + " items");
         setItemCount(amount);
+        cart.addItem(item, amount);
     }
 return(
     <>
@@ -17,7 +20,7 @@ return(
         ?
 
     <div className="detail">
-        <img src={item.picture} />
+        <img className="contextImg" src={item.picture} />
         <div >
             <h1> {item.title}</h1>
             <p> {item.description}</p>
