@@ -30,7 +30,9 @@ return(
 
                 itemCount === 0
                 ? <ItemCount  stock={item.stock} initial= {itemCount} onAdd={onAdd}/>
-                : <Link to='/cart'> <button>CheckOut</button></Link>
+                : <div> <Link to='/cart'> <button>CheckOut</button></Link>
+                <Link to='/'><button>SEGUIR COMPRANDO</button></Link>
+                </div>
             }
 
         </div>
