@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import {products} from "./products";
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import customFetch from "./CustomFetch";
+import {fetchFirestore} from "./fetchFirestore";
 
 
 const ItemListContainer = ({greeting}) => {
@@ -11,18 +10,13 @@ const ItemListContainer = ({greeting}) => {
     const {idCategory} = useParams();
 
     useEffect(() => {
-        if(idCategory ==  undefined){
-            customFetch(2000, products)
-            .then(result => setDesk(result))
-            .catch(err => console.log(err))
-        }else{
-            customFetch(2000, products.filter(item => item.categoryId === parseInt(idCategory)))
-            .then(result => setDesk(result))
-            .catch(err => console.log(err))
-        }
-
+        
+        fetchFirestore(idCategory)
+            .then(result => setDesk(result) )
+            .catch (err => console.log(err))
     }, [idCategory])
 
+    
 
     return(
         <>

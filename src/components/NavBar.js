@@ -14,7 +14,6 @@ const NavBar = () => {
                     <Link to='/category/1'><li>Escritorios</li></Link>   
                     <Link to='/category/2'><li>Sillas</li></Link> 
                     <Link to='/category/3'><li>Bibliotecas</li></Link> 
-                    <Link to='/category/4'><li>Sillones</li></Link> 
                 </ul>
             </div>
             <div className='iconsRight'>
