@@ -16,7 +16,7 @@ const CartContextProvider = ({children}) => {
             ...cartList,
             {
                 idItem: item.id,
-                pictureItem: item.picture[0],
+                pictureItem: item.picture,
                 titleItem: item.title,
                 priceItem: item.price,
                 amountItem: amount
