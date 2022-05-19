@@ -14,7 +14,7 @@ const Search =() => {
     return(
         <>
         <input onKeyDown={handleEvent}></input>
-        <SearchIcon className='searchIcon'/>
+        <SearchIcon style={{marginRight:"15px"}}/>
         </>
     )
     

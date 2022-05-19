@@ -3,6 +3,7 @@ import { CartContext } from "./CartContext";
 import {Link} from 'react-router-dom';
 import {collection, setDoc, doc, serverTimestamp} from 'firebase/firestore';
 import db from '../utils/firebaseConfig';
+import {ContainerCart, Button, Empty, ContainerImg, CartTitle, Total} from "./styledComponents";
 
 const Cart = () => {
     const cart = useContext(CartContext);
@@ -36,48 +37,47 @@ const Cart = () => {
     }
     return(
         <>
-            <h1>Su carrito</h1>
 
-            {
-                (cart.cartList.length > 0)
-                ? <button onClick={cart.clear}>ELIMINAR PRODUCTOS</button>
-                : <h3>Esta vacio...</h3>
-            }
-            {
-                cart.cartList.length > 0 && 
-                    
-                        cart.cartList.map(item =>
-                        
-                        <div>
-                            <img className="contextImg" src={item.pictureItem}></img>
-                            <h3>Product: {item.titleItem}</h3>
-                            <p>Items:{item.amountItem}</p>
-                            <p>Price: ${item.priceItem} each product.</p>
-                            <p>Total Price for this product: ${cart.precioTotalItems(item.idItem)}</p>
-                            <button onClick={() => cart.removeItem(item.idItem)}>DELETE ITEM</button>
-                        </div>
-                        )
-                    
-                    
-            }
-            {
-                cart.cartList.length > 0 && 
-                    
-                    <div>
-                        <h3>CUENTA FINAL</h3>
-                        <p>${cart.precioTotal()}</p>
-                        <button onClick={checkOut}>FINALIZAR COMPRA</button>
-                        
-                    </div>
-                
-            }
+        <ContainerCart>
+            <div>
+                {
+                    cart.cartList.length > 0 && 
+                        <Total>
+                            <CartTitle>CUENTA FINAL</CartTitle>
+                            <p>${cart.precioTotal()}</p>
+                            <Button onClick={checkOut}>FINALIZAR COMPRA</Button>
+                            <Link to='/'><Button>SEGUIR COMPRANDO</Button></Link>
+                        </Total>
+                }
+            </div>
 
-            <Link to='/'><button>SEGUIR COMPRANDO</button></Link>
-
+            <div>
+                {
+                    cart.cartList.length > 0 && 
+                    <h1>Su carrito</h1>
+                }
+                {
+                    cart.cartList.length > 0 && 
+                            cart.cartList.map(item =>
+                            <div>
+                                <h3>Product: {item.titleItem}</h3>
+                                <ContainerImg className="contextImg" src={item.pictureItem}></ContainerImg>
+                                <p>Items:{item.amountItem}</p>
+                                <p>Price: ${item.priceItem} each product.</p>
+                                <p>Total Price for this product: ${cart.precioTotalItems(item.idItem)}</p>
+                                <Button onClick={() => cart.removeItem(item.idItem)}>DELETE ITEM</Button>
+                            </div>
+                            )   
+                }
+                {
+                    (cart.cartList.length > 0)
+                    ? <Button onClick={cart.clear}>ELIMINAR PRODUCTOS</Button>
+                    : <Empty>Su carrito esta vacio...</Empty>
+                } 
+            </div>
             
+        </ContainerCart>    
 
-
-            
         </>
     )
 }

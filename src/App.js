@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
           <NavBar/>
           <Routes>
-              <Route path='/' element={<ItemListContainer greeting="¿Tenes que hacer Home Office y no estas cómodo en tu casa? Your.Desk. tiene la solución para vos! Podrás encontrar una variedad de escritorios, sillas y sillones, de distintos materiales y tamaños, justo lo que estabas buscando!"/> } />
+              <Route path='/' element={<ItemListContainer intro="¿Tenes que hacer Home Office y no estas cómodo en tu casa? Your.Desk. tiene la solución para vos! Podrás encontrar una variedad de escritorios, sillas y bibliotecas, de distintos materiales y tamaños, justo lo que estabas buscando!"/> } />
               <Route path='/category/:idCategory' element={<ItemListContainer />} />
               <Route path= '/item/:idItem' element= {<ItemDetailContainer />} />
               <Route path= '/cart' element = {<Cart />} />

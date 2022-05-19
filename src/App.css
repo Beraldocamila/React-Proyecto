@@ -1,121 +1,13 @@
-.nav{
-  background-color: #efd3bbbe;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 150px;
-}
 
 .logo{
 margin: 10px;
-
-}
-
-.categories li{
-  display: inline-block;
-  text-align: center;
-  word-spacing: 10px;
-  width: 100px;
-  text-decoration: none;
-  color: #452e21;
-  font-family: 'Belleza', sans-serif;
-
 }
 
 
-
-
-.iconsRight{
-  display: flex;
-  justify-content: space-between;
-  margin: 30px
-  
-}
-
-.badge, .searchIcon{
-  color: #452e21;
-}
-
-.itemListContainer{
-  text-align: center;
-  margin: 50px;
-  font-family: 'Belleza', sans-serif;
-  color: #a4614e;
-  font-size: 20px;
-
-}
-.desk_title{
-width: 50%;
-text-align: center;
-}
-
-.desk_title img, .contextImg{
-  height: 350px;
-  width: 350px;
-}
-.cardDesk{
-text-align: center;
-margin-bottom: 100px;
-display: flex;
-
-}
-
-.itemsContainer{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 50px;
-  padding: 100px;
-
-}
-
-.imgDesk{
-  height: 350px;
-  width: 350px;
-}
-.detail img{
-  height: 350px;
-  width: 350px;
-}
-
-.detail{
-  display: flex;
-  margin: 100px;
-  width: 70%;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.detail div{
-  width: 60%;
-}
-.title{
-  margin: 20px;
-  font-family: 'Belleza', sans-serif;
-  color: #663b30;
-  font-size: 15px;
-  text-decoration: underline;
-}
-
-.addToCart{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-}
-
-.addToCart_button{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-
-}
 
 .App {
   text-align: center;
+
 }
 
 .App-logo {

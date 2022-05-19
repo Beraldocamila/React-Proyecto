@@ -1,6 +1,6 @@
 import React from "react"
 import Card from 'react-bootstrap/Card'
-import { Link } from "react-router-dom"
+import { StyledCards, StyledLinkCard } from "./styledComponents";
 
 
 
@@ -9,19 +9,17 @@ import { Link } from "react-router-dom"
 const Item = ({id, title, price, stock, picture}) =>{
     return(
 
-        <Card className="cardDesk" key={id} >
-            <div>
+        <StyledCards key={id} >
             <Card.Title>{title}</Card.Title>
-            <Card.Img variant="top" src={picture} className="imgDesk"/> 
+            <Card.Img variant="top" src={picture} style={{height: "350px", width: "350px"}}/>
             <Card.Body>
 
-                <Card.Text>Price: {price}</Card.Text>
+                <Card.Text>Price: ${price}</Card.Text>
                 <Card.Text>Stock: {stock}</Card.Text>
-                <Link to={`/item/${id}`}><Card.Text>MAS INFO</Card.Text></Link>
+                <StyledLinkCard to={`/item/${id}`}>VER MÁS</StyledLinkCard>
             </Card.Body>
-            </div>
 
-        </Card>
+        </StyledCards>
     )
 }
 

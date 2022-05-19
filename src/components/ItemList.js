@@ -1,17 +1,16 @@
 
-import Item from './Item'
+import Item from './Item';
+import {ItemsContainer} from './styledComponents';
 
 
 export default function ItemList({productos}){
     return(
         <>
-
-            <div className='itemsContainer'>
+            <ItemsContainer>
                 {productos.map((products) =>
                     <Item key={products.id}{...products} />
                 )}
-            </div>
-
+            </ItemsContainer>
         </>
 
     )

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {IncrementDecrement, ItemCountButton, ContainerAddButton, Amount, Button} from "./styledComponents";
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -19,19 +20,21 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     
     return (
-        <div className="addToCart">
 
-            <div className="addToCart_button">
-                <button onClick={decrement}>-</button>
-                <p>Cantidad: {amount}</p>
-                <button onClick={increment}>+</button>
-                {stock && amount
-                ?<button onClick={() => onAdd(amount)}> ADD TO CART</button>
-                : <button variant="contained" disabled >ADD TO CART</button>
-                }
+            <ContainerAddButton>
+                <IncrementDecrement>
+                    <Button onClick={decrement}>-</Button>
+                    <Amount><p>Cantidad: {amount}</p></Amount>
+                    <Button onClick={increment}>+</Button>
+                </IncrementDecrement>
+                <ItemCountButton>
+                    {stock && amount
+                    ?<Button onClick={() => onAdd(amount)}> ADD TO CART</Button>
+                    : <Button variant="contained" disabled >ADD TO CART</Button>
+                    }
+                </ItemCountButton>
                 
-            </div>
-        </div>
+            </ContainerAddButton>
     )
 }
 

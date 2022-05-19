@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Badge from '@mui/material/Badge';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {Link} from 'react-router-dom';
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import {StyledShoppingCartIcon} from './styledComponents';
 
 
 
@@ -15,7 +15,7 @@ return(
     
     <Link to='/cart'>
         <Badge badgeContent={cart.totalAmountItems()} color="secondary" className="badge">
-            <ShoppingCartIcon />
+            <StyledShoppingCartIcon/>
         </Badge>
     </Link>
 

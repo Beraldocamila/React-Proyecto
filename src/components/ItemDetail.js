@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import ItemCount from './ItemCount';
 import {Link} from 'react-router-dom'
 import { CartContext } from './CartContext';
+import {ContainerDetail, ContainerImg, DetailDescription, TitleId, ItemCountButton, Button, Buttons} from "./styledComponents";
 
 const ItemDetail = ({item}) => {
 
@@ -19,24 +20,29 @@ return(
         item && item.picture
         ?
 
-    <div className="detail">
-        <img className="contextImg" src={item.picture} />
-        <div >
-            <h1> {item.title}</h1>
+    <ContainerDetail>
+        <ContainerImg src={item.picture} />
+        <DetailDescription >
+            <TitleId > {item.title}</TitleId>
             <p> {item.description}</p>
-            <p> Precio: {item.price}</p>
+            <p> Precio: ${(new Intl.NumberFormat('en-IN', { style: 'decimal' }).format(item.price))}</p>
             <p> Stock: {item.stock} unidades.</p>
+            
+        </DetailDescription>
+        <ItemCountButton>
             {
 
                 itemCount === 0
                 ? <ItemCount  stock={item.stock} initial= {itemCount} onAdd={onAdd}/>
-                : <div> <Link to='/cart'> <button>CheckOut</button></Link>
-                <Link to='/'><button>SEGUIR COMPRANDO</button></Link>
-                </div>
+                : <Buttons> 
+                    <Link to='/cart'> <Button>CheckOut</Button></Link>
+                    <Link to='/'><Button>Keep on buying</Button></Link>
+                </Buttons>
             }
+        </ItemCountButton>
 
-        </div>
-    </div>
+
+    </ContainerDetail>
     : 
     <p>Cargando..</p>
     }

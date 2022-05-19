@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import {fetchFirestore} from "./fetchFirestore";
+import { Intro } from "./styledComponents";
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({intro}) => {
 
     const [desk, setDesk] = useState ([]);
     const {idCategory} = useParams();
@@ -20,7 +21,7 @@ const ItemListContainer = ({greeting}) => {
 
     return(
         <>
-        <p className="itemListContainer"> {greeting} </p>
+        <Intro>{intro}</Intro>
         <ItemList productos={desk}/>
 
         </>
